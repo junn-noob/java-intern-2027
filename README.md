@@ -161,6 +161,21 @@ gantt
 
 ---
 
+## 🔄 QUY TRÌNH TIÊU CHUẨN MỖI BUỔI HỌC (DAILY SESSION WORKFLOW)
+Để đảm bảo nguyên tắc *"học đâu chắc đó, không rơi rụng kiến thức"*, mỗi buổi học sẽ tuân thủ nghiêm ngặt 4 bước:
+
+1. **Khởi động & Ôn tập (Warm-up Quiz - 10-15 phút đầu):**
+   * Bộ 3–5 câu hỏi phỏng vấn nhanh hoặc phân tích code bẫy để ôn lại toàn bộ bản chất của buổi học trước (kỹ thuật Spaced Repetition).
+   * Chỉ khi vượt qua bộ câu hỏi này mới bắt đầu học kiến thức mới.
+2. **Đào sâu bản chất (Core Deep Dive):**
+   * Khám phá kiến thức mới từ gốc rễ JVM / OS / Database / Framework, không học vẹt cú pháp.
+3. **Thực chiến & Giải thuật (Hands-on Coding & DSA):**
+   * Viết code áp dụng ngay vào bài toán nghiệp vụ, giải 1 bài toán thuật toán tối ưu $O(N)$.
+4. **Nghiệm thu & Đồng bộ (Tech Lead Review & Git Sync):**
+   * Tech Lead đánh giá năng lực, ghi nhật ký tiến độ vào `README.md` và tự động commit/push lên GitHub.
+
+---
+
 ## ⚡ QUY CHẾ RÈN LUYỆN THUẬT TOÁN SONG MÃ
 * **Trong tuần (Thứ 2 - Thứ 6):** Dành 45 - 60 phút mỗi ngày giải quyết 1 bài toán bám sát cấu trúc dữ liệu đang học.
 * **Cuối tuần (Thứ 7 / Chủ Nhật):** Algorithm Sprint (2-3 tiếng) tổng hợp, phân tích Big-O $O(Time)$ và $O(Space)$.
