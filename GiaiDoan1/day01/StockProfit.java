@@ -1,8 +1,7 @@
-package giaidoan1;
+package giaidoan1.day01;
 
 public class StockProfit {
     public static int maxProfit(int[] prices) {
-        // Defensive check: mảng rỗng hoặc null thì lợi nhuận bằng 0
         if (prices == null || prices.length == 0) {
             return 0;
         }

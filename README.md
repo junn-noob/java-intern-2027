@@ -27,9 +27,9 @@ Mỗi buổi học sẽ được ghi lại chi tiết: kiến thức đã làm c
 * **Hệ thống tiền tố (Modifiers) trong Java:** Phân biệt và ứng dụng thực tế `public`, `private`, `protected`, `static`, `final`, `abstract`, và lý do vì sao Java không cần từ khóa `virtual`.
 
 #### 2. Sản phẩm & Thuật toán đã nghiệm thu:
-* [x] **[GiaiDoan1/BankAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/BankAccount.java):** Hiện thực chuẩn tính đóng gói (**Encapsulation**), bảo vệ trạng thái số dư, chống rút tiền âm, xử lý an toàn dữ liệu đầu vào chống `NullPointerException`.
-* [x] **[GiaiDoan1/Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/Main.java):** Kịch bản kiểm thử toàn diện các tình huống hợp lệ và các cuộc tấn công dữ liệu biên.
-* [x] **[GiaiDoan1/StockProfit.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/StockProfit.java) (LeetCode #121):** Giải thuật tối ưu One-Pass:
+* [x] **[GiaiDoan1/day01/BankAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day01/BankAccount.java):** Hiện thực chuẩn tính đóng gói (**Encapsulation**), bảo vệ trạng thái số dư, chống rút tiền âm, xử lý an toàn dữ liệu đầu vào chống `NullPointerException`.
+* [x] **[GiaiDoan1/day01/Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day01/Main.java):** Kịch bản kiểm thử toàn diện các tình huống hợp lệ và các cuộc tấn công dữ liệu biên.
+* [x] **[GiaiDoan1/day01/StockProfit.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day01/StockProfit.java) (LeetCode #121):** Giải thuật tối ưu One-Pass:
   * **Time Complexity:** $O(N)$ (duyệt đúng 1 vòng lặp duy nhất).
   * **Space Complexity:** $O(1)$ (chỉ dùng 2 biến nguyên thủy trên Stack, không tốn Heap).
   * Có cơ chế phòng ngự (Defensive Programming) chặn mảng rỗng/null.

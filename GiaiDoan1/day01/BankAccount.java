@@ -1,4 +1,4 @@
-package giaidoan1;
+package giaidoan1.day01;
 
 public class BankAccount {
     private final String accountNumber;
@@ -12,15 +12,21 @@ public class BankAccount {
             this.ownerName = ownerName;
         }
 
-        if (initialBalance >= 0) this.balance = initialBalance;
+        if (initialBalance >= 0) {
+            this.balance = initialBalance;
+        }
     }
 
     public void deposit(double amount) {
-        if (amount > 0) this.balance += amount;
+        if (amount > 0) {
+            this.balance += amount;
+        }
     }
 
     public void withdraw(double amount) {
-        if (amount > 0 && this.balance >= amount) this.balance -= amount;
+        if (amount > 0 && this.balance >= amount) {
+            this.balance -= amount;
+        }
     }
 
     public String getAccountNumber() {
