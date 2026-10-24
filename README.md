@@ -42,6 +42,40 @@ Mỗi buổi học sẽ được ghi lại chi tiết: kiến thức đã làm c
 
 ---
 
+### 📅 BUỔI 2 (DAY 2 - 24/10/2026): Tính Kế Thừa (Inheritance), Template Method Pattern & Kỹ Thuật Hai Con Trỏ (Two Pointers)
+
+#### 1. Kiến thức cốt lõi đã làm chủ:
+* **Bản chất vùng nhớ Heap trong Kế thừa:** Object con chứa trọn vẹn toàn bộ các trường của cha (kể cả trường `private`) trên Heap; từ khóa `private` chỉ là hàng rào kiểm soát ở tầng compiler.
+* **Cơ chế Constructor Chaining & Quy tắc ngầm:**
+  * Thứ tự thực thi: Lớp Cha luôn phải khởi tạo xong xuôi (`super()`) trước khi lớp Con bắt đầu thực thi ("xây móng nhà trước khi xây tầng 2").
+  * Trong một constructor, dòng đầu tiên chỉ được chọn **HOẶC `super(...)` HOẶC `this(...)`**, không bao giờ được cả hai.
+* **Phân tích chiều sâu Kiến trúc `protected` vs `private`:**
+  * Chỉ ra lỗ hổng lớn của `protected field`: Bất kỳ class nào trong cùng package đều có thể can thiệp và làm vỡ tính đóng gói của Cha.
+  * Hiểu rõ nguyên tắc Joshua Bloch: *"Fields are private, protected is only for methods"*.
+* **Làm chủ Template Method Pattern (Mẫu thiết kế kinh điển):**
+  * Tách biệt quyền hạn: Cha độc quyền giữ biến `balance` và thực hiện trừ tiền trong `withdraw()`, Con chỉ việc override hàm điều kiện `canWithdraw()` để tùy biến luật chơi.
+* **Dynamic Method Dispatch & Runtime Polymorphism:** Cơ chế JVM dựa vào bảng ảo `vtable` để chạy đúng phương thức của đối tượng thực tế trên Heap lúc Runtime.
+* **Quy tắc bất biến khi Method Overriding:** Hàm của Con được phép mở rộng phạm vi truy cập (Widening: `protected` ➔ `public`), cấm tuyệt đối thu hẹp (Narrowing: `protected` ➔ `private`) theo nguyên lý Liskov Substitution Principle (LSP).
+
+#### 2. Sản phẩm & Thuật toán đã nghiệm thu:
+* [x] **[GiaiDoan1/day02/ServerLog.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day02/ServerLog.java):** Củng cố tính đóng gói tuyệt đối bằng kỹ thuật Defensive Copying mảng 2 chiều (Cửa Vào & Cửa Ra).
+* [x] **[GiaiDoan1/day02/SavingsAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day02/SavingsAccount.java):** Kế thừa `BankAccount`, nạp lãi suất và chặn rút dưới số dư tối thiểu 50k qua `super.withdraw()`.
+* [x] **[GiaiDoan1/day02/CheckingAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day02/CheckingAccount.java):** Hiện thực chuẩn Template Method Pattern, hỗ trợ thấu chi 2 triệu VNĐ và tự động trừ phí 5k.
+* [x] **[GiaiDoan1/day02/MoveZeroes.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day02/MoveZeroes.java) (LeetCode #283):**
+  * Giải thuật In-place Two Pointers (Kỹ thuật con trỏ ghi) không tốn thêm mảng phụ.
+  * **Time Complexity:** $O(N)$ (duyệt mảng 1 lần rưỡi).
+  * **Space Complexity:** $O(1)$ (In-place tuyệt đối).
+* [x] **[GiaiDoan1/day02/Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day02/Main.java):** Bộ test toàn diện 4 kịch bản chạy thành công 100%.
+
+#### 3. Báo cáo đánh giá từ Tech Lead:
+* **Điểm tư duy kiến trúc & phản biện:** `10 / 10`  
+  *(Cực kỳ ấn tượng khi bạn tự mình phát hiện ra điểm yếu bảo mật của hàm `protected adjustBalance` nếu chung package!)*
+* **Điểm giải thuật & In-place Big-O:** `10 / 10`
+* **Nhận xét của Tech Lead:** 
+  > *"Buổi học xuất sắc nhất từ trước đến nay! Bạn không chỉ học cú pháp mà đã chạm đến tư duy thiết kế hệ thống cấp độ Architect. Hoàn thành 100% mục tiêu Kế thừa và Thuật toán mảng của Tuần 1!"*
+
+---
+
 ## 🧭 TỔNG QUAN LỘ TRÌNH 32 TUẦN (ROADMAP OVERVIEW)
 
 ```mermaid

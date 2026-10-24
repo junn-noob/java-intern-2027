@@ -53,7 +53,21 @@ public class Main {
         System.out.println("Số dư sau khi thử rút lố = " + checking.getBalance() + " VNĐ (Giao dịch bị từ chối thành công!)");
 
         System.out.println("\n==================================================");
-        System.out.println("🎉 TẤT CẢ 3 BÀI TEST OOP ĐỀU CHẠY THÀNH CÔNG 100%!");
+        System.out.println("          TEST 4: MOVE ZEROES (LEETCODE #283)     ");
+        System.out.println("==================================================");
+        int[] testNums = { 0, 1, 0, 3, 12 };
+        System.out.print("Mảng ban đầu: [ ");
+        for (int n : testNums) System.out.print(n + " ");
+        System.out.println("]");
+
+        MoveZeroes.moveZeroes(testNums);
+
+        System.out.print("Mảng sau khi MoveZeroes: [ ");
+        for (int n : testNums) System.out.print(n + " ");
+        System.out.println("] (Kỳ vọng: [ 1 3 12 0 0 ])");
+
+        System.out.println("\n==================================================");
+        System.out.println("🎉 TẤT CẢ CÁC BÀI TEST DAY 2 ĐỀU THÀNH CÔNG 100%!");
         System.out.println("==================================================");
     }
 }
