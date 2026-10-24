@@ -23,8 +23,12 @@ public class BankAccount {
         }
     }
 
+    public boolean canWithdraw(double amount) {
+        return amount > 0 && this.balance >= amount;
+    }
+
     public void withdraw(double amount) {
-        if (amount > 0 && this.balance >= amount) {
+        if (canWithdraw(amount)) {
             this.balance -= amount;
         }
     }
