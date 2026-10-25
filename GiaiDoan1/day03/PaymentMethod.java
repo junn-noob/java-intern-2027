@@ -1,0 +1,6 @@
+package giaidoan1.day03;
+
+public interface PaymentMethod {
+    void pay(double amount);
+    String getDetails();
+}

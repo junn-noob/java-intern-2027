@@ -76,6 +76,41 @@ Mỗi buổi học sẽ được ghi lại chi tiết: kiến thức đã làm c
 
 ---
 
+### 📅 BUỔI 3 (DAY 3 - 25/10/2026): Tính Trừu Tượng (Abstraction), Đa Hình (Polymorphism) & Master Review Tuần 1
+
+#### 1. Kiến thức cốt lõi đã làm chủ:
+* **Bản chất Abstract Class vs Interface:**
+  * `Abstract Class`: Đại diện quan hệ **IS-A** khi cần chia sẻ trạng thái nội bộ (**State / Instance fields** như `transactionId`, `amount`).
+  * `Interface`: Đại diện quan hệ **CAN-DO** (hợp đồng năng lực / hành vi chung). Không chứa trạng thái instance.
+* **Tính Đa Hình (Polymorphism) & Virtual Method Table (vtable):**
+  * Compile-time (Khai báo kiểu trừu tượng ở vế trái): `javac` kiểm tra chữ ký hàm của type khai báo.
+  * Runtime (Dynamic Dispatch): JVM duyệt `vtable` của đối tượng thực sự trên Heap (`this`), tự động kích hoạt phiên bản override ở lớp con mà không cần bất kỳ câu lệnh `if-else / switch-case` nào.
+  * Phân tích sâu tư duy kiến trúc: Tự mình phát hiện cơ chế gọi lại của `super.withdraw()` và tối ưu hóa Template Method Pattern.
+* **Ôn tập tổng kết Tuần 1 (Master Quiz):**
+  * Vượt qua 4 tình huống thực chiến: Defensive Copying mảng 2 chiều; Cơ chế Pass-by-Value & Stack/Heap của biến tham chiếu; Thiết kế hệ thống E-commerce Shipping chuẩn OCP; Cơ chế Dynamic Dispatch của JVM.
+  * Điểm số bài kiểm tra tuần: `39 / 40`.
+
+#### 2. Sản phẩm & Thuật toán đã nghiệm thu:
+* [x] **[GiaiDoan1/day03/PaymentMethod.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day03/PaymentMethod.java):** Interface định nghĩa hợp đồng thanh toán.
+* [x] **[GiaiDoan1/day03/BasePayment.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day03/BasePayment.java):** Abstract class quản lý mã giao dịch và số tiền chung.
+* [x] **[GiaiDoan1/day03/CreditCardPayment.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day03/CreditCardPayment.java):** Cài đặt thanh toán thẻ tín dụng với phí 2%.
+* [x] **[GiaiDoan1/day03/MoMoPayment.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day03/MoMoPayment.java):** Cài đặt thanh toán ví điện tử MoMo 0% phí.
+* [x] **[GiaiDoan1/day03/PaymentProcessor.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day03/PaymentProcessor.java):** Xử lý thanh toán đa hình duyệt mảng `PaymentMethod[]`.
+* [x] **[GiaiDoan1/day03/ValidPalindrome.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day03/ValidPalindrome.java) (LeetCode #125):** 
+  * Kỹ thuật **Two Pointers (Hai con trỏ Left & Right đối xứng)** bỏ qua ký tự đặc biệt bằng `Character.isLetterOrDigit` và so sánh không phân biệt hoa thường bằng `Character.toLowerCase`.
+  * **Time Complexity:** $O(N)$ (duyệt tối đa 1 lượt chuỗi).
+  * **Space Complexity:** $O(1)$ (In-place trên Stack, không cấp phát thêm Heap/chuỗi mới).
+* [x] **[GiaiDoan1/day03/Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day03/Main.java):** Kịch bản kiểm thử toàn diện đa hình và 6 test cases thuật toán Valid Palindrome (Pass 100%).
+
+#### 3. Báo cáo đánh giá từ Tech Lead:
+* **Điểm tư duy kiến trúc & OOP:** `10 / 10`
+* **Điểm giải thuật & tối ưu Big-O:** `10 / 10`
+* **Điểm kiểm tra tuần (Master Review):** `9.75 / 10` (39/40)
+* **Nhận xét của Tech Lead:** 
+  > *"Hoàn thành xuất sắc tuần học đầu tiên! Tư duy đào sâu bản chất JVM, Dynamic Dispatch và phát hiện điểm thừa trong Template Method Pattern thể hiện năng khiếu kiến trúc rất rõ rệt. Đã làm chủ trọn bộ 4 tính chất OOP và 3 kỹ thuật mảng/chuỗi cơ bản (One-Pass, Two Pointers Fast-Slow, Two Pointers Left-Right). Sẵn sàng bứt phá sang Tuần 2!"*
+
+---
+
 ## 🧭 TỔNG QUAN LỘ TRÌNH 32 TUẦN (ROADMAP OVERVIEW)
 
 ```mermaid
@@ -111,9 +146,9 @@ gantt
 
 #### 2. Bốn tính chất OOP từ góc độ thiết kế & bộ nhớ (Tuần 2 - 3)
 - [x] **Encapsulation (Đóng gói):** Bảo vệ bất biến (Class Invariants), Information Hiding, chống rò rỉ tham chiếu.
-- [ ] **Inheritance (Kế thừa):** Cơ chế constructor chaining (`super()`), thứ tự cấp phát bộ nhớ khi khởi tạo lớp con. Phân tích *Composition over Inheritance*.
-- [ ] **Polymorphism (Đa hình):** Method Overloading vs Overriding. Dynamic Method Dispatch & Bảng ảo (**vtable**).
-- [ ] **Abstraction (Trừu tượng):** `Abstract Class` vs `Interface`. Các tính năng hiện đại: `default`, `static`, `private` method trong Interface. Triết lý SOLID.
+- [x] **Inheritance (Kế thừa):** Cơ chế constructor chaining (`super()`), thứ tự cấp phát bộ nhớ khi khởi tạo lớp con. Phân tích *Composition over Inheritance*.
+- [x] **Polymorphism (Đa hình):** Method Overloading vs Overriding. Dynamic Method Dispatch & Bảng ảo (**vtable**).
+- [x] **Abstraction (Trừu tượng):** `Abstract Class` vs `Interface`. Các tính năng hiện đại: `default`, `static`, `private` method trong Interface. Triết lý SOLID.
 
 #### 3. Java Collections Framework Internals (Tuần 4 - 5)
 - [ ] Độ phức tạp: `ArrayList` (Dynamic Array) vs `LinkedList` (Node liên kết đôi, Cache locality).
