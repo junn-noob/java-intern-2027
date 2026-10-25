@@ -111,6 +111,18 @@ Mỗi buổi học sẽ được ghi lại chi tiết: kiến thức đã làm c
 
 ---
 
+### 🏆 CAPSTONE PROJECT TUẦN 1: HỆ THỐNG GIAO VẬN E-COMMERCE TỐI ƯU (`giaidoan1.review01`)
+
+Hệ thống tích hợp toàn diện 4 trụ cột OOP, Template Method Pattern, 2-Way Defensive Copying và Giải thuật Hai Con Trỏ In-Place ($O(N)$ Time, $O(1)$ Space):
+* [x] **[Shippable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/review01/Shippable.java):** Interface năng lực tính phí & thông tin giao vận (CAN-DO).
+* [x] **[BaseOrder.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/review01/BaseOrder.java):** Abstract class quản lý State và Template Method `processOrder()`, bảo vệ trạng thái bằng Defensive Copying 2 chiều ở Constructor và Getter.
+* [x] **[StandardOrder.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/review01/StandardOrder.java), [ExpressOrder.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/review01/ExpressOrder.java), [VIPOrder.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/review01/VIPOrder.java):** Cài đặt đa hình quy tắc nghiệp vụ duyệt đơn và phí ship.
+* [x] **[OrderProcessor.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/review01/OrderProcessor.java):** Xử lý đơn hàng hàng loạt qua đa hình thuần túy (không `instanceof` / `if-else`).
+* [x] **[OrderUtils.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/review01/OrderUtils.java):** Giải thuật Two Pointers lọc món hủy (`0.0`) In-place chuẩn LeetCode #283.
+* [x] **[Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/review01/Main.java):** Kịch bản kiểm thử toàn diện 3 phần: Đa hình duyệt đơn, Thử nghiệm tấn công mảng (Defensive Copying Hack Test), và Lọc món hủy In-place (Pass 100%).
+
+---
+
 ## 🧭 TỔNG QUAN LỘ TRÌNH 32 TUẦN (ROADMAP OVERVIEW)
 
 ```mermaid
