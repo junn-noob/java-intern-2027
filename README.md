@@ -123,6 +123,39 @@ Hệ thống tích hợp toàn diện 4 trụ cột OOP, Template Method Pattern
 
 ---
 
+### 📅 BUỔI 4 (DAY 4 - 28/10/2026): 5 Nguyên Lý Thiết Kế SOLID (Phần 1: S - O - L) & Giải Thuật Hai Con Trỏ Nâng Cao
+
+#### 1. Kiến thức cốt lõi đã làm chủ:
+* **Bộ ba Nguyên lý SOLID (S - O - L):**
+  * **S (Single Responsibility Principle):** Mỗi class chỉ có duy nhất một lý do để thay đổi. Tách biệt rành rọt giữa Data Model/Entity và Processing Service để triệt tiêu God Class.
+  * **O (Open-Closed Principle):** Mở rộng tính năng bằng Interface & Đa hình (Open for extension), đóng cửa không sửa code cũ đã chạy ổn định (Closed for modification) để tránh regression bug.
+  * **L (Liskov Substitution Principle):** Lớp con phải có khả năng thay thế hoàn toàn cho lớp cha mà không làm thay đổi tính đúng đắn của chương trình.
+* **Mổ xẻ "Nghịch lý Hình Chữ Nhật & Hình Vuông":**
+  * Tận mắt tái hiện bug khi cho `Square extends Rectangle` (chiều cao bị ép thay đổi theo chiều rộng, dẫn đến diện tích tính sai từ 20 thành 16).
+  * Hiểu sâu bản chất: Quan hệ IS-A trong toán học không đồng nghĩa với quan hệ Kế thừa trong lập trình OOP nếu hành vi (Behavior) bị vi phạm.
+  * Refactor chuẩn mực sang Interface `Shape` độc lập, áp dụng triết lý *"Composition over Inheritance"*.
+* **Field Shadowing vs Method Overriding & Bộ nhớ Heap:**
+  * Giải mã cơ chế truy xuất biến (Field) ở Compile-time theo kiểu khai báo vế trái vs gọi hàm (Method) ở Runtime theo đối tượng thực sự trên Heap.
+  * Nắm vững cơ chế Offset byte của JVM HotSpot và lý do tại sao thuộc tính luôn phải để `private`.
+
+#### 2. Sản phẩm & Thuật toán đã nghiệm thu:
+* [x] **[GiaiDoan1/day04/Shape.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day04/Shape.java):** Interface hợp đồng hình học chung với hàm `getArea()`.
+* [x] **[GiaiDoan1/day04/Rectangle.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day04/Rectangle.java):** Hình chữ nhật độc lập `implements Shape`.
+* [x] **[GiaiDoan1/day04/Square.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day04/Square.java):** Hình vuông độc lập `implements Shape` chỉ chứa đúng 1 cạnh `side`.
+* [x] **[GiaiDoan1/day04/TwoSumSorted.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day04/TwoSumSorted.java) (LeetCode #167):**
+  * Giải thuật Hai Con Trỏ (Two Pointers Left & Right hội tụ) trên mảng đã sắp xếp:
+  * **Time Complexity:** $O(N)$ (duyệt tối đa 1 lượt mảng).
+  * **Space Complexity:** $O(1)$ (In-place trên Stack, không dùng HashMap/bộ nhớ phụ).
+* [x] **[GiaiDoan1/day04/Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day04/Main.java):** Kịch bản kiểm thử toàn diện LSP và 3 test cases thuật toán Two Sum II (Pass 100%).
+
+#### 3. Báo cáo đánh giá từ Tech Lead:
+* **Điểm tư duy kiến trúc & SOLID:** `10 / 10`
+* **Điểm giải thuật & tối ưu Big-O:** `10 / 10`
+* **Nhận xét của Tech Lead:** 
+  > *"Tinh thần chiến binh rất đáng khen ngợi! Sau 2 ngày thi cử, bạn đã nhanh chóng lấy lại 100% phong độ, tự mình giác ngộ lý do tại sao không nên kế thừa bừa bãi và viết thuật toán Two Sum II tối ưu $O(N)$ ngay lần đầu tiên. Chúc mừng bạn đã hoàn thành xuất sắc Day 4!"*
+
+---
+
 ## 🧭 TỔNG QUAN LỘ TRÌNH 32 TUẦN (ROADMAP OVERVIEW)
 
 ```mermaid
