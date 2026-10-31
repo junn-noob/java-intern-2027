@@ -262,6 +262,22 @@ Tích hợp toàn diện 100% kiến thức Day 1 -> Day 5: 4 trụ cột OOP, t
 
 ---
 
+### 🏆 CAPSTONE CHALLENGE 02: HỆ THỐNG THU PHÍ TỰ ĐỘNG KHÔNG DỪNG ETC (`GiaiDoan1.challenge02`)
+
+Mô phỏng thực tế kiến trúc trạm thu phí VETC / ePass tích hợp ISP, Ép kiểu Interface (Interface Pattern Matching), Đa hình động và Thuật toán 3 con trỏ Dutch National Flag (LeetCode #75 - $O(N)$ Time, $O(1)$ Space):
+* [x] **[TollPayable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/TollPayable.java), [RFIDReadable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/RFIDReadable.java), [EmergencyVehicle.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/EmergencyVehicle.java):** Chuẩn Interface Segregation Principle (ISP) - tách biệt rạch ròi giữa định danh phần cứng (thẻ RFID), tài khoản thanh toán và quyền ưu tiên công vụ.
+* [x] **[BaseVehicle.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/BaseVehicle.java):** Lớp cha trừu tượng quản lý biển số, tải trọng đăng kiểm và hàm tính phí trừu tượng `calculateBaseToll()`.
+* [x] **[StandardCar.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/StandardCar.java):** Xe con phí cố định 35.000 VNĐ, quản lý riêng biệt mã thẻ RFID và mã tài khoản thanh toán.
+* [x] **[HeavyTruck.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/HeavyTruck.java):** Xe tải tính phí lũy tiến tải trọng thực tế, tự động phạt thêm 100% phí gốc nếu phát hiện chở quá tải (`actualWeight > registeredWeight`).
+* [x] **[Ambulance.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/Ambulance.java):** Xe cứu thương ưu tiên, phí 0 VNĐ, không tài khoản, không RFID.
+* [x] **[TollBoothController.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/TollBoothController.java):** Module điều khiển thanh chắn Barie qua Constructor Injection `BaseVehicle[]`, sử dụng Interface Downcasting kiểm tra hợp lệ và điều khiển mở/đóng Barie chính xác.
+* [x] **[TrafficController.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/TrafficController.java) (LeetCode #75):**
+  * Thuật toán 3 con trỏ Dutch National Flag (`low`, `mid`, `high`) phân luồng làn xe $O(N)$ One-Pass, $O(1)$ Space In-place hoán đổi trực tiếp không dùng Counting Sort.
+  * Có Defensive Check phòng thủ mảng `null` và độ dài $\le 1$.
+* [x] **[Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge02/Main.java):** Kịch bản kiểm thử toàn diện Barie, xử phạt quá tải, chặn xe thẻ hỏng/hết tiền, và 4 kịch bản thuật toán phân luồng (Pass 100%).
+
+---
+
 ## 📅 LỘ TRÌNH CHI TIẾT 32 TUẦN
 
 ```mermaid
