@@ -1,5 +1,5 @@
-package giaidoan1.day02;
-import giaidoan1.day01.BankAccount;
+package GiaiDoan1.day02;
+import GiaiDoan1.day01.BankAccount;
 
 public class SavingsAccount extends BankAccount {
     private final double interestRate;

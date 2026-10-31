@@ -1,4 +1,4 @@
-package giaidoan1.day02;
+package GiaiDoan1.day02;
 
 public class Main {
     public static void main(String[] args) {

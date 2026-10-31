@@ -1,4 +1,4 @@
-package giaidoan1.day03;
+package GiaiDoan1.day03;
 
 public class ValidPalindrome {
     public static boolean isPalindrome(String s) {
@@ -15,4 +15,4 @@ public class ValidPalindrome {
 
         return true;
     }
-}
+}

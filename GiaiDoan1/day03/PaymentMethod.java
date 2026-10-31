@@ -1,4 +1,4 @@
-package giaidoan1.day03;
+package GiaiDoan1.day03;
 
 public interface PaymentMethod {
     void pay(double amount);

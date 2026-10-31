@@ -1,4 +1,4 @@
-package giaidoan1.day01;
+package GiaiDoan1.day01;
 
 public class StockProfit {
     public static int maxProfit(int[] prices) {

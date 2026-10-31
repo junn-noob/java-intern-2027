@@ -1,4 +1,4 @@
-package giaidoan1.day01;
+package GiaiDoan1.day01;
 
 public class BankAccount {
     private final String accountNumber;

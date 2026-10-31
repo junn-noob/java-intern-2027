@@ -249,6 +249,19 @@ Tích hợp 4 trụ cột OOP, Template Method Pattern, 2-Way Defensive Copying 
 
 ---
 
+### 🏆 CAPSTONE CHALLENGE: HỆ THỐNG ĐỐI SOÁT TÀI CHÍNH (`GiaiDoan1.challenge01`)
+
+Tích hợp toàn diện 100% kiến thức Day 1 -> Day 5: 4 trụ cột OOP, trọn bộ 5 nguyên lý SOLID, Template Method, 2-Way Defensive Copying và Two Pointers Closest Pair ($O(N)$ Time, $O(1)$ Space):
+* [x] **[Payable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge01/Payable.java), [Refundable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge01/Refundable.java):** Chuẩn Interface Segregation Principle (ISP) - tách năng lực thanh toán và hoàn tiền riêng biệt.
+* [x] **[BaseAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge01/BaseAccount.java):** Khung xương Template Method Pattern, trừ đúng phí giao dịch và tự động cập nhật lịch sử bằng `System.arraycopy`.
+* [x] **[BankAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge01/BankAccount.java):** Kế thừa `BaseAccount`, implements `Refundable`, phí cố định 5.000 VNĐ.
+* [x] **[CryptoWallet.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge01/CryptoWallet.java):** Tuân thủ ISP (không có hoàn tiền), phí 2%, chặn rút dưới số dư tối thiểu 100.000 VNĐ.
+* [x] **[SettlementEngine.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge01/SettlementEngine.java):** Đảo ngược phụ thuộc (DIP) qua Constructor Injection `Payable[]`, đối soát hàng loạt chính xác chỉ đếm giao dịch thành công.
+* [x] **[TransactionAuditor.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge01/TransactionAuditor.java):** Thuật toán Two Pointers tìm cặp giao dịch gần `target` nhất ($O(N)$ Time, $O(1)$ Space), xử lý triệt để bẫy 2 đầu và chênh lệch tối thiểu bằng `Math.abs`.
+* [x] **[Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge01/Main.java):** Kịch bản kiểm thử khắc nghiệt 6 đòn kiểm tra: Refund, Trừ phí, Crypto limit, Đối soát batch, Thuật toán Two Pointers (3 test cases), Hack bộ nhớ mảng (Pass 100%).
+
+---
+
 ## 📅 LỘ TRÌNH CHI TIẾT 32 TUẦN
 
 ```mermaid

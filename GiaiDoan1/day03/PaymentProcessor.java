@@ -1,4 +1,4 @@
-package giaidoan1.day03;
+package GiaiDoan1.day03;
 
 public class PaymentProcessor {
     public static void processAll(PaymentMethod[] methods, double amount) {
