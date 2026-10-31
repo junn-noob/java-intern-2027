@@ -1,4 +1,4 @@
-package giaidoan1.review01;
+package GiaiDoan1.review01;
 
 public class OrderProcessor {
     public static void processAll(BaseOrder[] methods) {

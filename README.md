@@ -287,6 +287,22 @@ Mô phỏng thực tế kiến trúc trạm thu phí VETC / ePass tích hợp IS
 
 ---
 
+### 🏆 CAPSTONE CHALLENGE 03: HỆ THỐNG PHÂN PHỐI ĐƠN HÀNG FLASH-SALE & TỐI ƯU KHO BÃI (`GiaiDoan1.challenge03`)
+
+Thử thách cấp độ cao tích hợp Sao chép tận gốc (Deep Defensive Copying mảng Object), Bảo vệ bất biến (Invariants), Template Method và Đỉnh cao Two Pointers LeetCode #42 Trapping Rain Water ($O(N)$ Time, $O(1)$ Space):
+* [x] **[OrderItem.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/OrderItem.java):** Đối tượng mặt hàng độc lập, hiện thực Copy Constructor `OrderItem(OrderItem other)` hỗ trợ nhân bản trên Heap.
+* [x] **[BaseOrder.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/BaseOrder.java):** Lớp cha trừu tượng bảo vệ bộ nhớ bằng Deep Copy 2 chiều (Constructor & Getter), triển khai Template Method `calculateFinalPayment()` điều phối luồng tính tiền chuẩn mực.
+* [x] **[VoucherAppliable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/VoucherAppliable.java), [FreeShippingEligible.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/FreeShippingEligible.java):** Tách Interface theo chuẩn ISP.
+* [x] **[StandardOrder.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/StandardOrder.java):** Đơn tiêu chuẩn, xử lý an toàn voucher null bằng `"SALE10".equals(voucherCode)`, phí ship 30.000 VNĐ.
+* [x] **[FlashSaleOrder.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/FlashSaleOrder.java):** Đơn giờ vàng giảm 30%, freeship, bảo vệ bất biến nghiêm ngặt chặn gian lận (từ chối đơn nếu có món mua số lượng > 2).
+* [x] **[OrderDispatchService.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/OrderDispatchService.java):** Module cấp cao phụ thuộc Abstraction qua Constructor Injection `BaseOrder[]`, tính tổng doanh thu và phòng thủ mảng null an toàn.
+* [x] **[WarehouseBufferOptimizer.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/WarehouseBufferOptimizer.java) (LeetCode #42):**
+  * Thuật toán Two Pointers đối xứng tính lượng nước mưa đọng lại giữa các kệ hàng: $O(N)$ Time, $O(1)$ Space in-place trên Stack, không tốn mảng phụ `leftMax[]`/`rightMax[]`.
+  * Phòng thủ mảng `null` và độ dài $< 3$.
+* [x] **[Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge03/Main.java):** Bộ test toàn diện 5 nhóm bài kiểm tra: Chống hack bộ nhớ Heap, Voucher null-safe, Bất biến FlashSale, Doanh thu phân phối, và 4 test case LeetCode #42 (Pass 100%).
+
+---
+
 ## 📅 LỘ TRÌNH CHI TIẾT 32 TUẦN
 
 ```mermaid

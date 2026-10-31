@@ -1,4 +1,4 @@
-package giaidoan1.review01;
+package GiaiDoan1.review01;
 
 public class OrderUtils {
     public static void removeCancelledItems(double[] prices) {

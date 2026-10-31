@@ -1,4 +1,4 @@
-package giaidoan1.review01;
+package GiaiDoan1.review01;
 
 public class ExpressOrder extends BaseOrder{
     public ExpressOrder(String orderId, String customerName, double[] itemPrices, double weightKg) {
