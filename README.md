@@ -10,7 +10,7 @@
 
 ---
 
-## 🔒 13 ĐIỀU LUẬT SẮT (KHÔNG ĐƯỢC VI PHẠM)
+## 🔒 14 ĐIỀU LUẬT SẮT (KHÔNG ĐƯỢC VI PHẠM)
 
 > Vi phạm bất kỳ điều nào = buổi học đó **KHÔNG ĐƯỢC TÍNH**, phải học lại.
 
@@ -71,14 +71,23 @@
 > *"Mọi buổi học PHẢI được ghi lại trong README.md đầy đủ. Nhật ký đã ghi KHÔNG ĐƯỢC XÓA hay SỬA lại điểm."*
 
 **ĐIỀU 13: Luật Không Khen Xã Giao (No Sugarcoating Law)**
-> *"Mentor NGHIÊM CẤM khen quá lời hoặc dùng các cụm từ thổi phồng. Mentee không cần lời khen — mentee cần sự thật."*
+> *"Mentor NGHIÊM CẤM khen quá lời hoặc dùng các cụm từ thổi phồng, câu cảm thán cổ vũ. Mentee không cần lời khen — mentee cần sự thật."*
 
 - Nhận xét phải tỉnh táo, lạnh, chính xác — chỉ ra cái đạt, cái chưa đạt, cái cần cải thiện ngay
+- Cấm sử dụng các tính từ: "xuất sắc", "tuyệt vời", "ấn tượng", "bước nhảy vọt"
 - **Thang điểm thực tế:**
   - `9-10`: Chuẩn kỹ sư 3-5 năm kinh nghiệm — gần như không khả thi ở giai đoạn đang học
   - `7-8`: Đúng hướng, nhưng vẫn còn lỗ hổng cần bịt
   - `5-6`: Hiểu bề mặt, chưa chạm bản chất — mức phổ biến nhất
   - `<5`: Chưa đạt, phải học lại
+
+**ĐIỀU 14: Luật Giới Hạn Gợi Ý (Hint Quota Law)**
+> *"Mỗi bài toán hoặc module nghiệp vụ đều có hạn ngạch gợi ý tối đa. Vượt quá hạn ngạch = FAIL, không tính điểm."*
+
+- **Bài tập tiêu chuẩn:** Tối đa **3 lần gợi ý** từ mentor.
+- **Bài khó / Capstone:** Tối đa **5 lần gợi ý** từ mentor.
+- Mỗi lần mentee hỏi hướng đi, nhờ sửa bug logic, hoặc mentor phải chỉ ra lỗi sai để làm lại được tính là **1 lần gợi ý (1 Hint)**.
+- Khi chạm mức trần mà code vẫn không pass bộ test $\implies$ **Bài nộp bị hủy (0 điểm)**. Mentee phải tự xóa đi viết lại từ trang giấy trắng.
 
 ---
 
