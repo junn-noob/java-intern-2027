@@ -79,6 +79,20 @@ public class Main {
         System.out.print("Test 5.4 (Mảng null / thiếu phần tử): ");
         System.out.println(tripletNull.length == 0 ? "✅ PASS (Không crash)" : "❌ FAIL");
 
+        // 6. KIỂM TRA TRUY VẤN LỊCH SỬ GIAO DỊCH (LSGD)
+        System.out.println("\n--- [TEST 6] KIỂM TRA TRUY VẤN LỊCH SỬ GIAO DỊCH (LSGD) ---");
+        Transaction[] chkHistory = checking.getTransactions();
+        System.out.println("Tài khoản CHK-01 có tổng số giao dịch: " + chkHistory.length + " (Kỳ vọng: 2 -> 1 nạp gốc + 1 chuyển tiền)");
+        for (int i = 0; i < chkHistory.length; i++) {
+            Transaction tx = chkHistory[i];
+            System.out.println("   [" + (i + 1) + "] ID: " + tx.getTransactionId() 
+                + " | Số tiền: " + (long)tx.getAmount() + " VNĐ | Nội dung: " + tx.getDescription());
+        }
+        boolean historyOk = chkHistory.length == 2 
+            && chkHistory[0].getDescription().equals("NAP_TIEN") 
+            && chkHistory[1].getDescription().equals("CHUYEN_TIEN");
+        System.out.println("Kiểm tra nội dung LSGD: " + (historyOk ? "✅ PASS" : "❌ FAIL"));
+
         System.out.println("\n==================================================");
         System.out.println("KẾT THÚC BỘ KIỂM THỬ THỰC CHIẾN CAPSTONE 04!");
         System.out.println("==================================================");
