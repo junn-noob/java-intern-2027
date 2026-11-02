@@ -303,6 +303,23 @@ Thử thách cấp độ cao tích hợp Sao chép tận gốc (Deep Defensive C
 
 ---
 
+### 🏆 CAPSTONE CHALLENGE 04: CORE BANKING & AML DETECTION ENGINE (`GiaiDoan1.challenge04`)
+
+Hệ thống Ngân hàng số tự thiết kế 100% không gợi ý: Phân tách quyền hạn ISP (`Depositable`, `Withdrawable`, `Transferable`), Deep Copy bảo vệ mảng đối tượng `Transaction[]`, và Thuật toán điều tra rửa tiền LeetCode #15 3-Sum ($O(N^2)$ Time, $O(1)$ Space):
+* [x] **[Transaction.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/Transaction.java):** Bất biến (Immutable), trang bị Copy Constructor `Transaction(Transaction other)` nhân bản ô nhớ Heap.
+* [x] **[BaseAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/BaseAccount.java):** Lớp cha bảo vệ lịch sử giao dịch bằng Deep Copy 2 chiều, tự động sinh mã `TX-...` và nạp vào lịch sử mảng bằng `System.arraycopy`.
+* [x] **[Depositable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/Depositable.java), [Withdrawable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/Withdrawable.java), [Transferable.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/Transferable.java):** Bộ 3 Interface phân tách chuẩn ISP.
+* [x] **[CheckingAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/CheckingAccount.java):** Tài khoản thanh toán thường, phí chuyển 1.000 VNĐ, số dư không âm.
+* [x] **[SavingsAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/SavingsAccount.java):** Tài khoản tiết kiệm, duy trì số dư tối thiểu 1.000.000 VNĐ, cấm tuyệt đối chuyển tiền ra ngoài (không implements `Transferable`).
+* [x] **[CreditAccount.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/CreditAccount.java):** Thẻ tín dụng chi tiêu âm trong hạn mức thấu chi (`overdraftLimit`), nạp đúng phí 4% (0.04).
+* [x] **[TransferService.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/TransferService.java):** Dịch vụ chuyển tiền an toàn, đảm bảo tính nguyên tử (Atomicity), phòng thủ null an toàn.
+* [x] **[AmlDetector.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/AmlDetector.java) (LeetCode #15 - 3Sum):**
+  * Thuật toán Two Pointers lồng vòng lặp tìm bộ 3 giao dịch rửa tiền có tổng bằng `target`: $O(N^2)$ Time, $O(1)$ Space in-place trên Stack.
+  * Phòng thủ mảng `null` và độ dài $< 3$.
+* [x] **[Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/challenge04/Main.java):** Kịch bản kiểm thử toàn diện 5 nhóm bài test: Chống hack mảng Transaction, Chặn chuyển tiền sổ tiết kiệm, Chuyển tiền Checking, Quẹt thẻ tín dụng khi số dư = 0, và 4 test cases thuật toán 3-Sum (Pass 100%).
+
+---
+
 ## 📅 LỘ TRÌNH CHI TIẾT 32 TUẦN
 
 ```mermaid
