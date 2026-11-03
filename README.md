@@ -258,6 +258,41 @@ Tích hợp 4 trụ cột OOP, Template Method Pattern, 2-Way Defensive Copying 
 
 ---
 
+### 📅 BUỔI 6 (DAY 6 - 03/11/2026): Chuyên Sâu Về String (String Pool, Immutability) & Kỹ Thuật Cửa Sổ Trượt (Sliding Window)
+
+#### 1. Kiến thức cốt lõi đã làm chủ:
+* **String Constant Pool (SCP) Internals:**
+  * Vị trí ô nhớ: Từ Java 7+ chuyển từ PermGen sang Java Heap, được GC dọn dẹp bình thường.
+  * Phân biệt cấp phát ô nhớ: String Literal (tìm/nạp SCP) vs `new String()` (bắt buộc tạo Object mới trên Heap) vs `intern()` (ép trả về tham chiếu trong SCP).
+  * Bản chất `==` (so sánh địa chỉ ô nhớ) vs `.equals()` (so sánh nội dung ký tự).
+* **Bản chất 4 lý do String Bất Biến (Immutable) & `final`:**
+  1. *String Constant Pool:* Cho phép nhiều biến chia sẻ chung một chuỗi mà không lo bị biến đổi lén lút.
+  2. *HashCode Caching:* Thuộc tính `hash` chỉ tính một lần lúc khởi tạo, tối ưu $O(1)$ cho `HashMap`/`HashSet`.
+  3. *An ninh hệ thống (Security):* Ngăn chặn tấn công Check-then-Act đối với chuỗi kết nối DB, socket port, file path, mật khẩu.
+  4. *An toàn đa luồng (Thread-Safety):* Read-only tuyệt đối, nhiều luồng đọc đồng thời không bao giờ cần Lock.
+* **Tối ưu hóa Compact Strings (Java 9+):**
+  * Chuyển đổi từ `char[]` (2 bytes/ký tự) sang `byte[]` kèm cờ `coder` (`LATIN1` tốn 1 byte, `UTF16` tốn 2 bytes), giảm trung bình 10–15% áp lực bộ nhớ Heap.
+* **Ghép chuỗi & Cấu trúc bộ đệm:**
+  * Nhận diện thảm họa `String (+)` trong vòng lặp sinh rác $O(N^2)$ Heap.
+  * Phân biệt sâu sắc `StringBuilder` (non-thread-safe, nhanh nhất) vs `StringBuffer` (`synchronized`, an toàn đa luồng nhưng sinh chi phí khóa).
+
+#### 2. Sản phẩm & Thuật toán đã nghiệm thu:
+* [x] **[StringInternalsDemo.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day06/StringInternalsDemo.java):** Đối chiếu chuẩn xác 4 trạng thái ô nhớ SCP, Benchmark 50.000 phép ghép: `String (+)` mất 183 ms vs `StringBuilder` mất 1 ms (nhanh hơn 180 lần).
+* [x] **[NoRepeatSubstring.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day06/NoRepeatSubstring.java) (LeetCode #3):**
+  * Thuật toán Cửa sổ trượt (Sliding Window) $O(N)$ Time, $O(M)$ Space tối ưu.
+  * Bảng đếm tần suất 256 phần tử xử lý an toàn toàn bộ dải ký tự Extended ASCII.
+  * Lập trình phòng vệ (Defensive Guard Clause) chặn `null` và chuỗi rỗng.
+* [x] **[Main.java](file:///c:/Users/hungn/OneDrive/Documents/Java/GiaiDoan1/day06/Main.java):** Kịch bản kiểm thử toàn diện 10 test cases: chuỗi mẫu, lặp lại, rỗng, khoảng trắng, các ca góc khuất (`dvdf`, `abba`), chuỗi `null`, và ký tự Unicode (Pass 100%).
+
+#### 3. Đánh giá (Hệ thống v2 - IRON EDITION):
+* **Kiến trúc ô nhớ String & Benchmark:** `9.5 / 10`
+* **Tư duy thuật toán Sliding Window:** `9.0 / 10`
+* **Lập trình phòng vệ (Defensive):** `8.5 / 10` (Đã vá lỗi null-check và nới rộng mảng 256)
+* **Hạn mức gợi ý đã dùng:** `-1.0` (Đã dùng 1 / 3 gợi ý)
+* **Tổng điểm Day 6:** `8.5 / 10` — **XẾP LOẠI: PASS**
+
+---
+
 ### 🏆 CAPSTONE CHALLENGE: HỆ THỐNG ĐỐI SOÁT TÀI CHÍNH (`GiaiDoan1.challenge01`)
 
 Tích hợp toàn diện 100% kiến thức Day 1 -> Day 5: 4 trụ cột OOP, trọn bộ 5 nguyên lý SOLID, Template Method, 2-Way Defensive Copying và Two Pointers Closest Pair ($O(N)$ Time, $O(1)$ Space):
@@ -348,7 +383,7 @@ flowchart LR
 |------|-----------|------------|--------|
 | Day 4 ✅ | S, O, L + LSP Rectangle/Square | #167 Two Sum II | Đã hoàn thành |
 | Day 5 ✅ | **I (Interface Segregation) + D (Dependency Inversion)** | #11 Container With Most Water | Code ISP/DIP + thuật toán |
-| Day 6 | **String Deep Dive:** String Pool, `intern()`, StringBuilder vs StringBuffer | #3 Longest Substring Without Repeating (**Sliding Window**) | Code demo String Pool |
+| Day 6 ✅ | **String Deep Dive:** String Pool, `intern()`, StringBuilder vs StringBuffer | #3 Longest Substring Without Repeating (**Sliding Window**) | Code demo String Pool + LeetCode #3 |
 | Review 02 | Capstone Tuần 2: Hệ thống áp dụng đủ 5 SOLID | — | Project + Class Diagram |
 
 #### Tuần 3 (03/11 → 08/11/2026) — Exception Handling & Enum
