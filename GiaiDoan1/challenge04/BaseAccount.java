@@ -91,7 +91,7 @@ public class BaseAccount {
         return true;
     }
 
-    protected boolean withdrawCash(double amount) {
+    public boolean withdrawCash(double amount) {
         if (canWithdraw(amount)) {
             this.balance -= amount;
             return true;

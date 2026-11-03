@@ -9,7 +9,7 @@ public class CheckingAccount extends BaseAccount implements Withdrawable, Transf
 
     @Override
     public boolean canTransfer(double amount) {
-        if (amount < 0) return false;
+        if (amount <= 0) return false;
 
         return this.getBalance() >= (amount + TRANSFER_FEE);
     }

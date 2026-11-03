@@ -11,7 +11,7 @@ public class CreditAccount extends BaseAccount implements Transferable, Withdraw
 
     @Override
     public boolean canWithdraw(double amount) {
-        if (amount < 0) return false;
+        if (amount <= 0) return false;
         return this.getBalance() + this.overdraftLimit >= amount * (1 + PERCENT_FEE);
     }
 

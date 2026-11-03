@@ -7,7 +7,7 @@ public class SavingsAccount extends BaseAccount implements Depositable {
 
     @Override
     public boolean canWithdraw(double amount) {
-        if (amount < 0) return false;
+        if (amount <= 0) return false;
 
         return this.getBalance() - amount >= 1_000_000;
     }
